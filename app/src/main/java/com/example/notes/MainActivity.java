@@ -55,13 +55,20 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences=getApplicationContext().getSharedPreferences("com.example.notes", Context.MODE_PRIVATE);
         HashSet<String> set=(HashSet<String>)sharedPreferences.getStringSet("notes",null);
 
+
+
+
         if (set==null){
             notes.add("Example note");
         }else{
             notes=new ArrayList<>(set);
         }
 
+
         notes.add("Example note");
+
+
+
 
         arrayAdapter= new ArrayAdapter(this, android.R.layout.simple_list_item_1,notes);
         listView.setAdapter(arrayAdapter);
